@@ -1,0 +1,27 @@
+{
+  "name": "@lexedwards/ts-utilities",
+  "description": "Monorepo for personal typecript-based utility packages",
+  "author": "Alex Edwards <alex@alexedwards.co> (https://alexedwards.co/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lexedwards/ts-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lexedwards/ts-utilities/issues"
+  },
+  "keywords": [],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "eslint": "latest",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "private": true,
+  "packageManager": "pnpm@8.3.1"
+}
