@@ -14,6 +14,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "ci:test": "turbo run build lint test",
     "ci:version": "changeset version",
@@ -26,5 +27,11 @@
     "turbo": "latest"
   },
   "private": true,
-  "packageManager": "pnpm@8.3.1"
+  "packageManager": "pnpm@8.3.1",
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "always",
+    "trailingComma": "all",
+    "semi": false
+  }
 }
