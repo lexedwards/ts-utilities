@@ -13,6 +13,9 @@ export async function help() {
     --doctor, -d, pack.doctor
         Perform a check on package.json's configuration
 
+    --init
+        Writes to package.json a standard default setup for typescript libraries
+
     --tsConfig, -c, pack.tsConfig
         Specify the typescript config to use on build
         default: 'tsconfig.json'

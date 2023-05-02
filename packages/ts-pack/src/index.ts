@@ -4,6 +4,7 @@ import { getPkgJson, getAggregatedConfig } from './configs'
 import { doctor, help } from './doctor'
 import { cyan } from './std'
 import { assertFile } from './fileSystem/verification'
+import { init } from './doctor/init'
 
 async function pack() {
   const currentDirectory = cwd()
@@ -19,6 +20,9 @@ async function pack() {
   }
   if (packConfig.doctor) {
     return doctor()
+  }
+  if (packConfig.init) {
+    return init()
   }
 
   await assertFile(currentDirectory, 'tsconfig.json')

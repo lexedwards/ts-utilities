@@ -1,7 +1,6 @@
-import { join } from 'node:path'
-import { readFile } from 'node:fs/promises'
 import { z } from 'zod'
 import { tsPackConfig } from './packConfig'
+import { readFile } from '../fileSystem/io'
 
 const exportValue = z
   .record(
@@ -31,6 +30,6 @@ const scopedPackageJson = z.object({
 export type ScopedPackageJson = z.infer<typeof scopedPackageJson>
 
 export async function getPkgJson(cwd: string): Promise<ScopedPackageJson> {
-  const file = await readFile(join(cwd, 'package.json'), { encoding: 'utf-8' })
-  return scopedPackageJson.parse(JSON.parse(file))
+  const file = await readFile(cwd, 'package.json')
+  return scopedPackageJson.passthrough().parse(JSON.parse(file))
 }

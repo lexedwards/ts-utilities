@@ -1,18 +1,21 @@
 lockfileVersion: '6.0'
 
-devDependencies:
-  '@changesets/cli':
-    specifier: ^2.26.1
-    version: 2.26.1
-  eslint:
-    specifier: latest
-    version: 8.39.0
-  prettier:
-    specifier: latest
-    version: 2.8.8
-  turbo:
-    specifier: latest
-    version: 1.9.3
+importers:
+
+  .:
+    devDependencies:
+      '@changesets/cli':
+        specifier: ^2.26.1
+        version: 2.26.1
+      eslint:
+        specifier: latest
+        version: 8.39.0
+      prettier:
+        specifier: latest
+        version: 2.8.8
+      turbo:
+        specifier: latest
+        version: 1.9.3
 
   packages/ts-pack:
     dependencies:

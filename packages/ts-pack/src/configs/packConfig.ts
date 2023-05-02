@@ -28,6 +28,9 @@ const argsReturn = parseArgs({
       type: 'boolean',
       short: 'p',
     },
+    init: {
+      type: 'boolean',
+    },
   },
 })
 
@@ -38,6 +41,7 @@ export const tsPackConfig = z.object({
   inputFile: z.string(),
   bundle: z.boolean(),
   preserveModules: z.boolean(),
+  init: z.boolean(),
 })
 
 export type TsPackConfig = z.infer<typeof tsPackConfig>
@@ -49,6 +53,7 @@ export const DEFAULT_CONFIG: TsPackConfig = {
   inputFile: 'src/index.ts',
   bundle: false,
   preserveModules: false,
+  init: false,
 }
 
 export async function getAggregatedConfig(
