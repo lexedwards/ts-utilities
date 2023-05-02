@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noErrorTruncation": true,
+    "target": "es2020",
+    "module": "NodeNext",
+    "outDir": "dist",
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "lib": ["ESNext"],
+    "noUnusedLocals": true,
+    "declaration": true,
+    "declarationDir": "dist/@types",
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules", "dist"],
+  "ts-node": {
+    "swc": true,
+    "transpileOnly": true
+  }
+}
