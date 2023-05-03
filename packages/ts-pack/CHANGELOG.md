@@ -1,5 +1,11 @@
 # @lexedwards/ts-pack
 
+## 1.1.1
+
+### Patch Changes
+
+- bb97203: FIX: Bundling external dependencies in commonjs
+
 ## 1.1.0
 
 ### Minor Changes
