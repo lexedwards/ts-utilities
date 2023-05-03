@@ -5,6 +5,7 @@ import { OutputOptions } from 'rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
 import { swc, defineRollupSwcOption, minify } from 'rollup-plugin-swc3'
+import commonjs from '@rollup/plugin-commonjs'
 
 import { ScopedPackageJson, getAggregatedConfig, getPkgJson } from '../configs'
 
@@ -41,8 +42,11 @@ export async function transpile() {
   const external = listExternals({ pkgJson, packConfig })
 
   const plugins = [
-    nodeResolve(),
+    nodeResolve({
+      preferBuiltins: true,
+    }),
     json(),
+    commonjs(),
     swc(
       defineRollupSwcOption({
         tsconfig: packConfig.tsConfig,
