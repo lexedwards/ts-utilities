@@ -1,5 +1,11 @@
 # @lexedwards/ts-pack
 
+## 1.2.0
+
+### Minor Changes
+
+- a762911: Declare external modules in full-bundling
+
 ## 1.1.1
 
 ### Patch Changes
