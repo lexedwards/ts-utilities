@@ -1,5 +1,11 @@
 # @lexedwards/ts-pack
 
+## 1.2.1
+
+### Patch Changes
+
+- fed92f7: Fix: match external with regexp
+
 ## 1.2.0
 
 ### Minor Changes
