@@ -20,7 +20,7 @@ export function listExternals({
   pkgJson,
   packConfig,
 }: ListExternals): Array<string> {
-  if (packConfig.bundle) return []
+  if (packConfig.bundle) return packConfig.external
   return [
     ...Object.keys(pkgJson.dependencies || {}),
     ...Object.keys(pkgJson.peerDependencies || {}),

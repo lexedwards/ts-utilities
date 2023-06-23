@@ -25,12 +25,17 @@ export async function help() {
         default: 'src/index.ts'
 
     --bundle, -b, pack.bundle
-        Bundle all dependencies in distribution.
+        Bundle dependencies in distribution.
         Useful for only relying on native node dependencies. i.e. lambdas
         default: false
 
     --preserveModules, -p, pack.preserveModules
         Preserved for future usage, currently does not affect bundling
         default: false
+
+    --external, -e, pack.external
+        Declare external packages when bundling. (Can be used multiple times)
+        Useful when the runtime environment has modules additional to the core standard library. i.e. Lambdas 
+        default: empty
 `)
 }
