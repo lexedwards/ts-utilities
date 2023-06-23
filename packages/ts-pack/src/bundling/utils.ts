@@ -19,8 +19,9 @@ interface ListExternals {
 export function listExternals({
   pkgJson,
   packConfig,
-}: ListExternals): Array<string> {
-  if (packConfig.bundle) return packConfig.external
+}: ListExternals): Array<string | RegExp> {
+  if (packConfig.bundle)
+    return packConfig.external.map((stringValue) => new RegExp(stringValue))
   return [
     ...Object.keys(pkgJson.dependencies || {}),
     ...Object.keys(pkgJson.peerDependencies || {}),
@@ -36,7 +37,7 @@ export function createOutputOptions(overrides: OutputOptions): OutputOptions {
 
 interface BuildOptions {
   input: string
-  external?: Array<string>
+  external?: Array<string | RegExp>
   name: string
   outputOptions: Array<OutputOptions>
   plugins?: InputPluginOption
