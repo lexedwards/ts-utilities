@@ -1,5 +1,11 @@
 # @lexedwards/ts-pack
 
+## 1.2.2
+
+### Patch Changes
+
+- d2d7a49: Better documentation of behaviour
+
 ## 1.2.1
 
 ### Patch Changes
