@@ -12,6 +12,11 @@ export async function writeToBundle(
     }),
   )
 }
+
+function mapToRegex(stringValue: string): RegExp {
+  return new RegExp(stringValue)
+}
+
 interface ListExternals {
   pkgJson: ScopedPackageJson
   packConfig: TsPackConfig
@@ -20,12 +25,16 @@ export function listExternals({
   pkgJson,
   packConfig,
 }: ListExternals): Array<string | RegExp> {
-  if (packConfig.bundle)
-    return packConfig.external.map((stringValue) => new RegExp(stringValue))
-  return [
-    ...Object.keys(pkgJson.dependencies || {}),
+  const alwaysExclude = [
+    ...Object.keys(pkgJson.devDependencies || {}),
     ...Object.keys(pkgJson.peerDependencies || {}),
   ]
+
+  if (packConfig.bundle)
+    return [...alwaysExclude, ...packConfig.external].map(mapToRegex)
+  return [...alwaysExclude, ...Object.keys(pkgJson.dependencies || {})].map(
+    mapToRegex,
+  )
 }
 
 export function createOutputOptions(overrides: OutputOptions): OutputOptions {
