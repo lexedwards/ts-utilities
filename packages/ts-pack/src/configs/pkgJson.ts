@@ -11,6 +11,7 @@ const exportValue = z
 
 const scopedPackageJson = z.object({
   dependencies: z.record(z.string(), z.string()).optional(),
+  devDependencies: z.record(z.string(), z.string()).optional(),
   exports: z
     .object({
       '.': exportValue,
@@ -25,6 +26,7 @@ const scopedPackageJson = z.object({
   type: z.enum(['commonjs', 'module']).optional(),
   types: z.string().optional(),
   version: z.string().optional(),
+  scripts: z.record(z.string(), z.string()).optional(),
 })
 
 export type ScopedPackageJson = z.infer<typeof scopedPackageJson>

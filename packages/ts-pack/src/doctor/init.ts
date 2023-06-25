@@ -26,6 +26,13 @@ export async function init() {
   pkgJson['ts-pack'] = pkgJson['ts-pack'] || {
     inputFile: DEFAULT_CONFIG.inputFile,
     tsConfig: DEFAULT_CONFIG.tsConfig,
+    bundle: false,
+    external: [],
+  }
+
+  pkgJson['scripts'] = {
+    ...(pkgJson.scripts || {}),
+    build: (pkgJson.scripts || {})['build'] || 'ts-pack',
   }
 
   await writeFile(
