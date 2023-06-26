@@ -47,6 +47,10 @@ A preconfigured [rollup.js]() bundler for Typescript Libraries, with additional 
         Declare external packages when bundling. (Can be used multiple times)
         Useful when the runtime environment has modules additional to the core standard library. i.e. Lambdas
         default: empty
+
+    --watch, -w, ts-pack.watch
+        Enter watch mode, where files saved in the source directory will trigger an automatic rebuild
+        default: false
 ```
 
 ### Requirements

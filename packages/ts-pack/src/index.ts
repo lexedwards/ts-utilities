@@ -1,5 +1,5 @@
 import { cwd } from 'node:process'
-import { transpile, emitTypes } from './bundling'
+import { transpile, emitTypes, watchMode } from './bundling'
 import { getPkgJson, getAggregatedConfig } from './configs'
 import { doctor, help } from './doctor'
 import { cyan } from './std'
@@ -23,6 +23,10 @@ async function pack() {
   }
   if (packConfig.init) {
     return init()
+  }
+
+  if (packConfig.watch) {
+    return watchMode()
   }
 
   await assertFile(currentDirectory, 'tsconfig.json')

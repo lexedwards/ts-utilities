@@ -1,6 +1,11 @@
-import { dirname } from 'node:path'
+import { dirname, extname } from 'node:path'
 import { InputPluginOption, OutputOptions, RollupBuild, rollup } from 'rollup'
 import { ScopedPackageJson, TsPackConfig } from '../configs'
+
+import nodeResolve from '@rollup/plugin-node-resolve'
+import json from '@rollup/plugin-json'
+import { swc, defineRollupSwcOption, minify } from 'rollup-plugin-swc3'
+import commonjs from '@rollup/plugin-commonjs'
 
 export async function writeToBundle(
   bundle: RollupBuild,
@@ -11,6 +16,26 @@ export async function writeToBundle(
       await bundle.write(opt)
     }),
   )
+}
+
+interface TranspileProps {
+  tsConfig?: string
+}
+export function transpilePlugins({ tsConfig }: TranspileProps) {
+  return [
+    nodeResolve({
+      preferBuiltins: true,
+    }),
+    json(),
+    commonjs(),
+    swc(
+      defineRollupSwcOption({
+        tsconfig: tsConfig,
+        minify: false,
+      }),
+    ),
+    minify(),
+  ]
 }
 
 function mapToRegex(stringValue: string): RegExp {
@@ -42,6 +67,31 @@ export function createOutputOptions(overrides: OutputOptions): OutputOptions {
     preserveModules: false,
     ...overrides,
   }
+}
+
+export function createModuleOutputOptions(
+  pkg: ScopedPackageJson,
+): OutputOptions[] {
+  const options: OutputOptions[] = []
+  if (pkg.main) {
+    options.push(
+      createOutputOptions({
+        dir: dirname(pkg.main),
+        entryFileNames: `[name]${extname(pkg.main)}`,
+        format: 'cjs',
+      }),
+    )
+  }
+  if (pkg.module) {
+    options.push(
+      createOutputOptions({
+        dir: dirname(pkg.module),
+        entryFileNames: `[name]${extname(pkg.module)}`,
+        format: `esm`,
+      }),
+    )
+  }
+  return options
 }
 
 interface BuildOptions {

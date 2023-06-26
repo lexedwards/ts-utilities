@@ -36,6 +36,10 @@ const argsReturn = parseArgs({
       multiple: true,
       short: 'e',
     },
+    watch: {
+      type: 'boolean',
+      short: 'w',
+    },
   },
 })
 
@@ -48,6 +52,7 @@ export const tsPackConfig = z.object({
   preserveModules: z.boolean(),
   init: z.boolean(),
   external: z.array(z.string()),
+  watch: z.boolean(),
 })
 
 export type TsPackConfig = z.infer<typeof tsPackConfig>
@@ -61,6 +66,7 @@ export const DEFAULT_CONFIG: TsPackConfig = {
   preserveModules: false,
   init: false,
   external: [],
+  watch: false,
 }
 
 export async function getAggregatedConfig(
