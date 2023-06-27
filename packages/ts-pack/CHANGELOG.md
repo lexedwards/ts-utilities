@@ -1,5 +1,11 @@
 # @lexedwards/ts-pack
 
+## 1.3.0
+
+### Minor Changes
+
+- 3013503: Feat: --watch mode
+
 ## 1.2.2
 
 ### Patch Changes
