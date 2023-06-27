@@ -23,6 +23,7 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
+    "debug": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts --watch",
     "lint": "eslint ./src/**/*",
     "test": "echo \"Error: no test runner\" && exit 0",
     "doctor": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts --doctor"
