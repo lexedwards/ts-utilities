@@ -27,7 +27,7 @@
     "turbo": "latest"
   },
   "private": true,
-  "packageManager": "pnpm@8.6.5",
+  "packageManager": "pnpm@8.6.6",
   "prettier": {
     "singleQuote": true,
     "arrowParens": "always",
