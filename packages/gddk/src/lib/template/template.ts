@@ -1,4 +1,4 @@
-export class Variable {
+export class Template {
   constructor() {}
   toJSON() {
     return {}

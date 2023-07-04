@@ -13,7 +13,3 @@ Grafana Dashboard Developer Kit.
 ## Roadmap
 
 Please see the [Roadmap Docs](./docs/ROADMAP.md)
-
-## Contribution
-
-Please see the [Contribution Docs](./docs/CONTRIBUTION.md)

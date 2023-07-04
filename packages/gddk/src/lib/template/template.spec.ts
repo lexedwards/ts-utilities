@@ -1,17 +1,17 @@
 import { describe, test, expect } from '@jest/globals'
-import { Variable } from './variable'
+import { Template } from './template'
 
-describe('Variable Construction', () => {
-  test('Variable class exists', () => {
-    expect(Variable).toBeDefined()
+describe('Template Construction', () => {
+  test('Template class exists', () => {
+    expect(Template).toBeDefined()
   })
   describe('class methods', () => {
     describe('toJSON', () => {
       test(`method exists`, () => {
-        expect(new Variable().toJSON).toBeDefined()
+        expect(new Template().toJSON).toBeDefined()
       })
       test('returns JSON object', () => {
-        const actualJSON = new Variable().toJSON()
+        const actualJSON = new Template().toJSON()
         expect(actualJSON).toMatchObject({})
       })
     })

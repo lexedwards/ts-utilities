@@ -31,7 +31,11 @@ const FiscalYearMap: Record<FiscalYearOption, FiscalYear> = {
   November: 10,
   December: 11,
 }
-
+enum GraphTooltip {
+  INDEPENDENT,
+  CROSSHAIR,
+  CROSSHAIR_AND_TOOLTIP,
+}
 type WeekStart =
   | 'monday'
   | 'tuesday'
@@ -43,10 +47,22 @@ type WeekStart =
 
 type Style = 'light' | 'dark'
 
+type TimeZone = 'utc' | 'browser'
+
+interface TimePickerOptions {
+  refresh_intervals?: Array<ShorthandTime>
+  collapse?: boolean
+  enable?: boolean
+  notice?: boolean
+  now?: boolean
+}
+
 interface TimeWindow {
   from: string
   to: string
 }
+
+type ShorthandTime = `${number}${'s' | 'm' | 'h' | 'd'}` | ''
 
 interface DashboardProps {
   /** */
@@ -56,46 +72,50 @@ interface DashboardProps {
   /** */
   fiscalMonth?: FiscalYearOption
   /** */
+  graphTooltip?: GraphTooltip
+  /** */
   style?: Style
   /** */
   tags?: Array<string>
   /** */
-  timepicker?: Array<ShorthandTime>
+  timepicker?: TimePickerOptions
   /** */
   timeWindow?: TimeWindow
   /** */
+  timezone?: TimeZone
+  /** */
   title: string
+  /** */
+  uid?: string
   /** */
   refresh?: ShorthandTime
   /** */
-  revision?: number
+  version?: number
   /** */
   weekStart?: WeekStart
 }
 
-type ShorthandTime = `${number}${'s' | 'm' | 'h' | 'd'}` | ''
-
 export class Dashboard {
-  // #uid: string
-  // #id: number
+  #uid?: string
+  // #id: number | null
   #title: string
   #description: string
   #editable: boolean
   // #annotations: Array<Annotation>
   #fiscalYearStartMonth: FiscalYear
-  // #graphTooltip = 1
+  #graphTooltip: GraphTooltip
   // #links: Array<Link>
   #liveNow = false
   // #panels: Array<Panel|Row>
   #refresh: ShorthandTime
-  #revision: number
   // #schemaVersion: number
   #style: Style
   #tags: Array<string>
   // #templating
   #time: TimeWindow
-  #timepicker: Array<ShorthandTime>
-  #timezone = ''
+  #timepicker: TimePickerOptions
+  #timezone: TimeZone
+  #version: number
   #weekStart: WeekStart
 
   constructor({
@@ -103,12 +123,19 @@ export class Dashboard {
     description = '',
     editable = true,
     fiscalMonth = 'January',
+    graphTooltip = GraphTooltip.CROSSHAIR,
+    refresh = '',
     style = 'dark',
     tags = [],
-    timepicker = [],
+    timepicker = {
+      collapse: false,
+      enable: true,
+      refresh_intervals: ['1m', '10m', '30m'],
+    },
     timeWindow = { from: 'now-7d', to: 'now' },
-    refresh = '',
-    revision = 1,
+    timezone = 'browser',
+    uid = undefined,
+    version = 1,
     weekStart = 'monday',
   }: DashboardProps) {
     if (!title) {
@@ -116,14 +143,17 @@ export class Dashboard {
     }
     this.#title = title
     this.#description = description
+    this.#editable = editable
     this.#tags = tags
     this.#fiscalYearStartMonth = FiscalYearMap[fiscalMonth]
+    this.#graphTooltip = graphTooltip
+    this.#refresh = refresh
+    this.#style = style
     this.#time = timeWindow
     this.#timepicker = timepicker
-    this.#editable = editable
-    this.#refresh = refresh
-    this.#revision = revision
-    this.#style = style
+    this.#timezone = timezone
+    this.#uid = uid
+    this.#version = version
     this.#weekStart = weekStart
   }
 
@@ -135,31 +165,39 @@ export class Dashboard {
   //   this.#links.push(...links)
   // }
 
+  get uid() {
+    return this.#uid
+  }
+
+  set uid(potentialValue: string) {
+    if (this.#uid) {
+      throw new Error('UID is already set, and once set can not be mutated')
+    }
+    this.#uid = potentialValue
+  }
+
   toJSON() {
     return {
       title: this.#title,
       description: this.#description,
-      // annotations: this.#annotations.length
-      //   ? {
+      // annotations:
+      //    {
       //       list: this.#annotations,
       //     }
-      //   : {},
       // links: this.#links,
       tags: this.#tags,
       refresh: this.#refresh,
       editable: this.#editable,
       fiscalYearStartMonth: this.#fiscalYearStartMonth,
+      graphTooltip: this.#graphTooltip,
       liveNow: this.#liveNow,
-      revision: this.#revision,
       time: this.#time,
-      timepicker: this.#timepicker.length
-        ? {
-            refresh_intervals: this.#timepicker,
-          }
-        : {},
+      timepicker: this.#timepicker,
       timezone: this.#timezone,
-      weekStart: this.#weekStart,
       style: this.#style,
+      uid: this.#uid,
+      version: this.#version,
+      weekStart: this.#weekStart,
     }
   }
 }

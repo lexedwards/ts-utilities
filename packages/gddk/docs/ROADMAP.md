@@ -51,22 +51,22 @@
 - [x] `description`
 - [x] `editable`
 - [x] `fiscalYearStartMonth`
-- [ ] `graphTooltip`
+- [x] `graphTooltip`
 - [ ] `id`
 - [ ] `links` - See [Links](#links)
-- [ ] `liveNow`
+- [x] `liveNow`
 - [ ] `panels` - See [Panels](#panels) and [Rows](#rows)
 - [ ] `schemaVersion`
 - [x] `style`
 - [x] `tags`
 - [ ] `templating` - See [Variables / Templating](#variables--templating)
 - [x] `time`
-- [ ] `timepicker`
-- [ ] `timezone`
+- [x] `timepicker`
+- [x] `timezone`
 - [x] `refresh`
 - [x] `revision`
 - [x] `weekStart`
-- [ ] `uid`
+- [x] `uid`
 
 #### Instance Methods
 
