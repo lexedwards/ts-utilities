@@ -97,7 +97,7 @@ interface DashboardProps {
 
 export class Dashboard {
   #uid?: string
-  // #id: number | null
+  #id = null
   #title: string
   #description: string
   #editable: boolean
@@ -108,7 +108,7 @@ export class Dashboard {
   #liveNow = false
   // #panels: Array<Panel|Row>
   #refresh: ShorthandTime
-  // #schemaVersion: number
+  #schemaVersion = 38 as const
   #style: Style
   #tags: Array<string>
   // #templating
@@ -190,11 +190,13 @@ export class Dashboard {
       editable: this.#editable,
       fiscalYearStartMonth: this.#fiscalYearStartMonth,
       graphTooltip: this.#graphTooltip,
+      id: this.#id,
       liveNow: this.#liveNow,
       time: this.#time,
       timepicker: this.#timepicker,
       timezone: this.#timezone,
       style: this.#style,
+      schemaVersion: this.#schemaVersion,
       uid: this.#uid,
       version: this.#version,
       weekStart: this.#weekStart,

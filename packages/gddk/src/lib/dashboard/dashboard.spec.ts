@@ -31,6 +31,7 @@ describe('Dashboard Construction', () => {
             "editable": true,
             "fiscalYearStartMonth": 0,
             "graphTooltip": 1,
+            "id": null,
             "liveNow": false,
             "time": {
               "from": "now-7d",
@@ -47,6 +48,7 @@ describe('Dashboard Construction', () => {
             },
             "timezone": "browser",
             "style": "dark",
+            "schemaVersion": 38,
             "version": 1,
             "weekStart": "monday"
           }"
@@ -303,14 +305,27 @@ describe('Dashboard Construction', () => {
     })
   })
 
-  // describe('liveNow', () => {})
+  describe('schemaVersion', () => {
+    test('it is always 38', () => {
+      const dashboardJSON = new Dashboard({ title: 'hello world' }).toJSON()
+      expect(dashboardJSON.schemaVersion).toBe(38)
+    })
+  })
+  describe('liveNow', () => {
+    test('default value in JSON', () => {
+      const dashboardJSON = new Dashboard({ title: 'hello world' }).toJSON()
+      expect(dashboardJSON.liveNow).toBe(false)
+    })
+  })
+  describe('id', () => {
+    test('it is always `null`', () => {
+      const dashboardJSON = new Dashboard({ title: 'hello world' }).toJSON()
+      expect(dashboardJSON.id).toBe(null)
+    })
+  })
   // describe('timeszone', () => {})
   // describe('annotations', () => {})
   // describe('links', () => {})
   // describe('panels', () => {})
-  // describe('schemaVersion', () => {})
   // describe('templating', () => {})
-  // describe('graphTooltip', () => {})
-  // describe('uid', () => {})
-  // describe('id', () => {})
 })
