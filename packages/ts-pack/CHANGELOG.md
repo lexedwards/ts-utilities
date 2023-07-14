@@ -1,5 +1,11 @@
 # @lexedwards/ts-pack
 
+## 1.3.2
+
+### Patch Changes
+
+- b2df60c: Fix: init script not configured correctly, leading to issues to correct manually
+
 ## 1.3.1
 
 ### Patch Changes
