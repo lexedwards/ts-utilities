@@ -1,6 +1,7 @@
 {
   "name": "@lexedwards/ts-utilities",
   "description": "Monorepo for personal typecript-based utility packages",
+  "version": "1.0.0",
   "author": "Alex Edwards <alex@alexedwards.co> (https://alexedwards.co/)",
   "repository": {
     "type": "git",
@@ -24,7 +25,7 @@
     "@changesets/cli": "^2.26.1",
     "@types/node": "^18.15.11",
     "eslint": "latest",
-    "prettier": "latest",
+    "prettier": "^2.8.8",
     "turbo": "latest",
     "typescript": "^5.1.6"
   },
