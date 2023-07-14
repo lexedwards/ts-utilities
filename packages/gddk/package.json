@@ -8,6 +8,9 @@
     "lint": "eslint",
     "test": "jest"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "grafana",
     "dashboard as code",
