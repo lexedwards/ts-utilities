@@ -1,5 +1,11 @@
 # @lexedwards/ts-pack
 
+## 1.3.1
+
+### Patch Changes
+
+- 62f3f2c: fix: package import pattern matching
+
 ## 1.3.0
 
 ### Minor Changes

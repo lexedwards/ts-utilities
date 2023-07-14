@@ -39,7 +39,7 @@ export function transpilePlugins({ tsConfig }: TranspileProps) {
 }
 
 function mapToRegex(stringValue: string): RegExp {
-  return new RegExp(stringValue)
+  return new RegExp(`^${stringValue}`)
 }
 
 interface ListExternals {
