@@ -12,15 +12,15 @@ export async function init() {
   pkgJson.name = pkgJson.name || curFolder
   pkgJson.version = pkgJson.version || '1.0.0'
   pkgJson.files = pkgJson.files || ['dist']
-  pkgJson.type = pkgJson.type || 'module'
-  pkgJson.main = pkgJson.main || './dist/cjs/index.cjs'
-  pkgJson.module = pkgJson.module || './dist/esm/index.mjs'
-  pkgJson.types = pkgJson.types || './dist/@types/index.d.ts'
-  pkgJson.exports = pkgJson.exports || {
+  pkgJson.type = 'module'
+  pkgJson.main = './dist/cjs/index.cjs'
+  pkgJson.module = './dist/esm/index.mjs'
+  pkgJson.types = './dist/@types/index.d.ts'
+  pkgJson.exports = {
     '.': {
-      import: './dist/esm',
-      require: './dist/cjs',
-      types: './dist/@types',
+      import: './dist/esm/index.mjs',
+      require: './dist/cjs/index.cjs',
+      types: './dist/@types/index.d.ts',
     },
   }
   pkgJson['ts-pack'] = pkgJson['ts-pack'] || {
@@ -32,7 +32,8 @@ export async function init() {
 
   pkgJson['scripts'] = {
     ...(pkgJson.scripts || {}),
-    build: (pkgJson.scripts || {})['build'] || 'ts-pack',
+    prebuild: 'rm -rf ./dist',
+    build: 'ts-pack',
   }
 
   await writeFile(
