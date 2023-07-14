@@ -59,11 +59,9 @@ This library will only work on Node v18 or higher, this is because it utilises n
 
 ### Init
 
-> All present configurations will persist through this operation. If you want to have them reconfigured, delete them.
+An initial setup script, that when ran, will configure `package.json` for you with best practices and modern standards of esm, following guidance directly from npmjs. These will ensure that fields that, if not present already, are set correctly for best compatibility.
 
-An initial setup script, that when ran, will configure `package.json` for you with best practices, following guidance directly from npmjs. These will ensure that fields that, if not present already, are set correctly for best compatibility.
-
-Fields that will be configured if non-existant:
+Fields that will be configured:
 
 - `name`,
 - `version`,
