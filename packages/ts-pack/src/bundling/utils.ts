@@ -25,6 +25,7 @@ export function transpilePlugins({ tsConfig }: TranspileProps) {
   return [
     nodeResolve({
       preferBuiltins: true,
+      exportConditions: ['node'],
     }),
     json(),
     commonjs(),
