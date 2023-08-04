@@ -1,5 +1,11 @@
 # @lexedwards/ts-pack
 
+## 1.3.3
+
+### Patch Changes
+
+- 1cec177: Add 'node' to Export Conditions in node resolutions
+
 ## 1.3.2
 
 ### Patch Changes
