@@ -3,10 +3,10 @@
     "baseUrl": ".",
     "noErrorTruncation": true,
     "target": "es2020",
-    "module": "NodeNext",
+    "module": "ES2020",
     "outDir": "dist",
     "sourceMap": false,
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "allowJs": false,
     "lib": ["ESNext"],
@@ -21,7 +21,6 @@
   },
   "exclude": ["node_modules", "dist"],
   "ts-node": {
-    "swc": true,
     "transpileOnly": true
   }
 }
