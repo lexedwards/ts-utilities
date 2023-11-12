@@ -78,7 +78,7 @@ importers:
         specifier: ^15.2.3
         version: 15.2.3(rollup@4.4.0)
       '@swc/core':
-        specifier: ^1.3.82
+        specifier: 1.3.82
         version: 1.3.82
       rollup:
         specifier: ^4.4.0
