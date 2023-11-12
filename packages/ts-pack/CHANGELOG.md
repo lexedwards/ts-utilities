@@ -1,5 +1,11 @@
 # @lexedwards/ts-pack
 
+## 1.3.4
+
+### Patch Changes
+
+- 38bde46: Fix: Pin swc until support for import assertions
+
 ## 1.3.3
 
 ### Patch Changes
