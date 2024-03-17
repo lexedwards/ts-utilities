@@ -30,7 +30,7 @@
     "typescript": "^5.1.6"
   },
   "private": true,
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@8.15.5",
   "prettier": {
     "singleQuote": true,
     "arrowParens": "always",
