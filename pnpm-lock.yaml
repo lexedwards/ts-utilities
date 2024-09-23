@@ -76,7 +76,7 @@ importers:
         version: 6.1.0(rollup@4.22.4)
       '@rollup/plugin-node-resolve':
         specifier: ^15.2.3
-        version: 15.2.4(rollup@4.22.4)
+        version: 15.3.0(rollup@4.22.4)
       '@swc/core':
         specifier: 1.3.82
         version: 1.3.82
@@ -107,7 +107,7 @@ importers:
         version: 9.1.0(eslint@8.57.1)
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.2(@swc/core@1.3.82)(@types/node@22.5.5)(typescript@5.6.2)
+        version: 10.9.2(@swc/core@1.3.82)(@types/node@22.6.0)(typescript@5.6.2)
 
 packages:
 
@@ -1061,8 +1061,8 @@ packages:
       rollup: 4.22.4
     dev: false
 
-  /@rollup/plugin-node-resolve@15.2.4(rollup@4.22.4):
-    resolution: {integrity: sha512-wnKAGisav1m2vgVK2/2mNowK5DCqff7kpz76cY1pECVE0qRQTCAIcWP5xmdGDi8X8K9SYeeC98i6cD3fk6qkDg==}
+  /@rollup/plugin-node-resolve@15.3.0(rollup@4.22.4):
+    resolution: {integrity: sha512-9eO5McEICxMzJpDW9OnMYSv4Sta3hmt7VtBFz5zR9273suNOydOyq/FrGeGy+KsTRFm8w0SLVhzig2ILFT63Ag==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.78.0||^3.0.0||^4.0.0
@@ -1463,8 +1463,8 @@ packages:
       undici-types: 5.26.5
     dev: true
 
-  /@types/node@22.5.5:
-    resolution: {integrity: sha512-Xjs4y5UPO/CLdzpgR6GirZJx36yScjh73+2NlLlkFRSoQN8B0DpfXPdZGnvVmLRLOsqDpOfTNv7D9trgGhmOIA==}
+  /@types/node@22.6.0:
+    resolution: {integrity: sha512-QyR8d5bmq+eR72TwQDfujwShHMcIrWIYsaQFtXRE58MHPTEKUNxjxvl0yS0qPMds5xbSDWtp7ZpvGFtd7dfMdQ==}
     dependencies:
       undici-types: 6.19.8
     dev: true
@@ -4062,7 +4062,7 @@ packages:
       typescript: 5.6.2
     dev: true
 
-  /ts-node@10.9.2(@swc/core@1.3.82)(@types/node@22.5.5)(typescript@5.6.2):
+  /ts-node@10.9.2(@swc/core@1.3.82)(@types/node@22.6.0)(typescript@5.6.2):
     resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
     hasBin: true
     peerDependencies:
@@ -4082,7 +4082,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.5.5
+      '@types/node': 22.6.0
       acorn: 8.11.3
       acorn-walk: 8.3.2
       arg: 4.1.3
