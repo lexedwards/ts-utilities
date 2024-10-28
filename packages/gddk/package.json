@@ -27,7 +27,7 @@
     "@lexedwards/ts-pack": "workspace:^",
     "@swc/core": "^1.3.66",
     "@swc/jest": "^0.2.26",
-    "@types/node": "^18.15.11",
+    "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "eslint": "^8.43.0",
