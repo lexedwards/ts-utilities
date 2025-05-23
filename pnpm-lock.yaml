@@ -91,7 +91,7 @@ importers:
         version: 0.12.1(@swc/core@1.3.82)(rollup@4.41.0)
       zod:
         specifier: ^3.22.4
-        version: 3.25.20
+        version: 3.25.23
     devDependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.10.0
@@ -4345,6 +4345,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zod@3.25.20:
-    resolution: {integrity: sha512-z03fqpTMDF1G02VLKUMt6vyACE7rNWkh3gpXVHgPTw28NPtDFRGvcpTtPwn2kMKtQ0idtYJUTxchytmnqYswcw==}
+  /zod@3.25.23:
+    resolution: {integrity: sha512-Od2bdMosahjSrSgJtakrwjMDb1zM1A3VIHCPGveZt/3/wlrTWBya2lmEh2OYe4OIu8mPTmmr0gnLHIWQXdtWBg==}
     dev: false
