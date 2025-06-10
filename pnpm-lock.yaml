@@ -91,7 +91,7 @@ importers:
         version: 0.12.1(@swc/core@1.3.82)(rollup@4.42.0)
       zod:
         specifier: ^3.22.4
-        version: 3.25.56
+        version: 3.25.57
     devDependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.10.0
@@ -107,7 +107,7 @@ importers:
         version: 9.1.0(eslint@8.57.1)
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.2(@swc/core@1.3.82)(@types/node@22.15.30)(typescript@5.8.3)
+        version: 10.9.2(@swc/core@1.3.82)(@types/node@24.0.0)(typescript@5.8.3)
 
 packages:
 
@@ -1525,10 +1525,10 @@ packages:
       undici-types: 5.26.5
     dev: true
 
-  /@types/node@22.15.30:
-    resolution: {integrity: sha512-6Q7lr06bEHdlfplU6YRbgG1SFBdlsfNC4/lX+SkhiTs0cpJkOElmWls8PxDFv4yY/xKb8Y6SO0OmSX4wgqTZbA==}
+  /@types/node@24.0.0:
+    resolution: {integrity: sha512-yZQa2zm87aRVcqDyH5+4Hv9KYgSdgwX1rFnGvpbzMaC7YAljmhBET93TPiTd3ObwTL+gSpIzPKg5BqVxdCvxKg==}
     dependencies:
-      undici-types: 6.21.0
+      undici-types: 7.8.0
     dev: true
 
   /@types/resolve@1.20.2:
@@ -4086,7 +4086,7 @@ packages:
       typescript: 5.8.3
     dev: true
 
-  /ts-node@10.9.2(@swc/core@1.3.82)(@types/node@22.15.30)(typescript@5.8.3):
+  /ts-node@10.9.2(@swc/core@1.3.82)(@types/node@24.0.0)(typescript@5.8.3):
     resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
     hasBin: true
     peerDependencies:
@@ -4106,7 +4106,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.15.30
+      '@types/node': 24.0.0
       acorn: 8.11.3
       acorn-walk: 8.3.2
       arg: 4.1.3
@@ -4223,8 +4223,8 @@ packages:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: true
 
-  /undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+  /undici-types@7.8.0:
+    resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
     dev: true
 
   /undici@5.29.0:
@@ -4349,6 +4349,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zod@3.25.56:
-    resolution: {integrity: sha512-rd6eEF3BTNvQnR2e2wwolfTmUTnp70aUTqr0oaGbHifzC3BKJsoV+Gat8vxUMR1hwOKBs6El+qWehrHbCpW6SQ==}
+  /zod@3.25.57:
+    resolution: {integrity: sha512-6tgzLuwVST5oLUxXTmBqoinKMd3JeesgbgseXeFasKKj8Q1FCZrHnbqJOyiEvr4cVAlbug+CgIsmJ8cl/pU5FA==}
     dev: false
